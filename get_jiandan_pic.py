@@ -10,7 +10,7 @@ import shutil
 from bs4 import BeautifulSoup
 import os
 
-class get_girl_img():
+class get_img():
     def test_ur(self, url):
         start_html = self.req_url(url)
         soup = BeautifulSoup(start_html.text, 'html.parser')
@@ -66,23 +66,23 @@ class get_girl_img():
 
 
 if __name__ == '__main__':
-    # meizi_dir = ""
-    # get_girl_img = get_girl_img()
-    # jian_meizi_url = "http://jandan.net/ooxx/page-2#comments"
-    # jian_meizi_url = "http://jandan.net/ooxx/"
-    # os.chdir(meizi_dir)
+    # pic_dir = ""
+    # get_img = get_img()
+    # jian_pic_url = "http://jandan.net/"
+    # jian_pic_url = "http://jandan.net/"
+    # os.chdir(pic_dir)
     # for i in range(1, 16):
-    #     url = jian_meizi_url+"page-"+str(i)+"#comments"
+    #     url = jian_pic_url+"page-"+str(i)+"#comments"
     #     print(url)
-    #     get_girl_img.all_url(url)
+    #     get_img.all_url(url)
     # url = "https://www.qiushibaike.com/"
 
-    # get_girl_img.test_ur(url)
+    # get_img.test_ur(url)
     set_dir_1 = ""
     set_dir_2 = ""
 
-    get_girl_img = get_girl_img()
-    get_girl_img.compare_pic(set_dir_1, set_dir_2)
+    get_img = get_img()
+    get_img.compare_pic(set_dir_1, set_dir_2)
 
 
 
