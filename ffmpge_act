@@ -1,0 +1,33 @@
+# -*- coding:utf-8 -*-
+
+
+import sys
+import os
+
+
+
+
+def cut_video(input_video, start_time, end_time, out_video):#剪切视频,
+    os.system('ffmpeg -i  '+input_video+'  -vcodec copy -acodec copy -ss '+start_time+' -to '+end_time+' '+out_video+'  -y')
+
+def megre_video(input_txt, out_video):#输入合并视频txt文件 输出合并的视频，txt内文件格式为：file  视频文件，例如file 1.mp4
+    os.system('ffmpeg  -f concat -safe 0 -i '+input_txt+' -c copy '+out_video)
+
+def get_m3u8_video(m3u8_url, save_video):#根据下载视频
+    os.system('ffmpeg -i '+m3u8_url+'  -vcodec copy -acodec copy -absf aac_adtstoasc '+save_video )
+
+def del_logo(input_video , out_video): #去除水印文件，x y为水印坐标，w为水印宽度，h为水印高度
+    os.system('ffmpeg -i '+input_video+'  -filter_complex "delogo=x=1:y=20:w=1080:h=50:show=0" '+out_video)
+
+
+
+
+
+if __name__ == '__main__' :
+
+
+    save_dir = 'D:\\movie\\'
+    video_name = 'Fast_7.mp4'
+    save_video = save_dir+video_name
+    m3u8_url = "https://sina.com-h-sina.com/20180728/1491_c02546bf/1000k/hls/index.m3u8"
+    get_m3u8_video(m3u8_url, save_video)
