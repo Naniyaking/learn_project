@@ -6,7 +6,7 @@ def get_num(num):
     else:
     
         for i in range(2,num):
-            if  num % i == 0:#取余等于10,说明有能被整除的数
+            if  num % i == 0:#取余等于0,说明能被整除
                 # print(i)
                 print(num,"不是素数")
                 j = int(num/i)   
